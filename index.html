@@ -1,486 +1,151 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>光㦓 létt｜QHHT 量子催眠</title>
-  <meta name="description" content="光㦓 létt，女性專屬 QHHT 量子催眠。靈魂意識探索、多時空整合、前世回溯、高我連結。台北，平日預約。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-```
-:root {
-  --gold:    #c9a96e;
-  --amber:   #e8b86d;
-  --dusk:    #d4895a;
-  --deep:    #1a1410;
-  --dark:    #251c14;
-  --mid:     #3d2e1e;
-  --soft:    #f5ede0;
-  --muted:   #b8a48a;
-  --white:   #fdf8f2;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--deep);
-  color: var(--soft);
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 300;
-  line-height: 1.9;
-  overflow-x: hidden;
-}
-
-/* ── NOISE OVERLAY ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
-}
-
-/* ── HERO ── */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 80%, #c97a2a22 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 30% 20%, #e8b86d11 0%, transparent 60%),
-    radial-gradient(ellipse 100% 80% at 50% 100%, #3d1a0a55 0%, transparent 80%),
-    linear-gradient(180deg, #0d0a07 0%, #1a1008 40%, #2a1a0a 70%, #1a0d05 100%);
-  z-index: 0;
-}
-
-/* Horizon glow */
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  bottom: 25%;
-  left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a96e44, #e8b86d66, #c9a96e44, transparent);
-  box-shadow: 0 0 40px 20px #c9a96e22;
-}
-
-/* Sun orb */
-.sun {
-  position: absolute;
-  bottom: 22%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff8e0 0%, #ffd97a 30%, #e8923a 60%, #c9600a 80%, transparent 100%);
-  box-shadow:
-    0 0 20px 10px #e8923a88,
-    0 0 60px 30px #c9600a44,
-    0 0 120px 60px #8a3a0a22;
-  animation: pulse 4s ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
-}
-
-/* Silhouette hills */
-.hills {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 30%;
-  z-index: 2;
-}
-
-.hills svg { width: 100%; height: 100%; }
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  margin-bottom: 28%;
-}
-
-.brand-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 12vw, 9rem);
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.08em;
-  color: var(--white);
-  line-height: 1;
-  text-shadow: 0 0 60px #c9a96e55;
-  animation: fadeUp 1.2s ease both;
-}
-
-.brand-zh {
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
-  letter-spacing: 0.5em;
-  color: var(--gold);
-  margin-top: 0.8rem;
-  animation: fadeUp 1.2s ease 0.2s both;
-}
-
-.hero-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
-  color: var(--muted);
-  margin-top: 2rem;
-  letter-spacing: 0.1em;
-  animation: fadeUp 1.2s ease 0.4s both;
-}
-
-.divider {
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 1.5rem auto;
-  animation: fadeUp 1.2s ease 0.5s both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── SECTIONS ── */
-section {
-  padding: 6rem 2rem;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.8rem;
-  letter-spacing: 0.4em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.section-label::before, .section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold));
-}
-.section-label::after {
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 300;
-  line-height: 1.3;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.section-body {
-  font-size: 0.95rem;
-  line-height: 2;
-  color: var(--muted);
-}
-
-/* ── ABOUT ── */
-.about-section {
-  text-align: center;
-}
-
-.about-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
-  color: var(--soft);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  position: relative;
-  padding: 0 1rem;
-}
-
-.about-quote::before {
-  content: '"';
-  font-size: 5rem;
-  color: var(--gold);
-  opacity: 0.25;
-  position: absolute;
-  top: -2rem;
-  left: -0.5rem;
-  line-height: 1;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-/* ── SERVICES ── */
-.services-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.service-card {
-  border: 1px solid #c9a96e22;
-  border-radius: 2px;
-  padding: 2rem;
-  background: linear-gradient(135deg, #251c1400 0%, #c9a96e08 100%);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.4s, background 0.4s;
-}
-
-.service-card:hover {
-  border-color: #c9a96e55;
-  background: linear-gradient(135deg, #c9a96e08 0%, #c9a96e12 100%);
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: linear-gradient(180deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.service-card:hover::before { opacity: 1; }
-
-.service-icon {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-}
-
-.service-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  color: var(--white);
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.05em;
-}
-
-.service-desc {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.9;
-}
-
-/* ── QHHT INTRO ── */
-.qhht-section {
-  background: linear-gradient(180deg, transparent, #c9a96e08, transparent);
-  border-top: 1px solid #c9a96e15;
-  border-bottom: 1px solid #c9a96e15;
-  text-align: center;
-  max-width: 100%;
-  padding: 5rem 2rem;
-}
-
-.qhht-inner {
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.qhht-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.step {
-  text-align: center;
-}
-
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-style: italic;
-  color: var(--gold);
-  opacity: 0.5;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.step-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  color: var(--soft);
-}
-
-.step-desc {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-top: 0.4rem;
-  line-height: 1.7;
-}
-
-/* ── FOR WHO ── */
-.for-who-list {
-  list-style: none;
-  margin-top: 2rem;
-  display: grid;
-  gap: 1rem;
-}
-
-.for-who-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.for-who-list li::before {
-  content: '◇';
-  color: var(--gold);
-  font-size: 0.7rem;
-  margin-top: 0.45rem;
-  flex-shrink: 0;
-}
-
-/* ── NOTICE ── */
-.notice-box {
-  border: 1px solid #c9a96e20;
-  padding: 2rem;
-  margin-top: 2rem;
-  background: #c9a96e06;
-  border-radius: 2px;
-}
-
-.notice-box p {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 2;
-}
-
-.notice-box strong {
-  color: var(--soft);
-  font-weight: 400;
-}
-
-/* ── CONTACT ── */
-.contact-section {
-  text-align: center;
-}
-
-.contact-section .section-body {
-  margin-bottom: 3rem;
-}
-
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 2.5rem;
-  font-family: 'Noto Serif TC', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  transition: all 0.3s;
-  min-width: 260px;
-  justify-content: center;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #c9a96e, #e8b86d);
-  color: var(--deep);
-  border: none;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #e8b86d, #f0c97d);
-  box-shadow: 0 0 30px #c9a96e44;
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid #c9a96e55;
-}
-
-.btn-secondary:hover {
-  border-color: var(--gold);
-  background: #c9a96e10;
-  transform: translateY(-1px);
-}
-
-.info-line {
-  font-size: 0.82rem;
-  color: var(--muted);
-  letter-spacing: 0.2em;
-  margin-top: 3rem;
-}
-
-/* ── FOOTER ── */
-footer {
-  text-align: center;
-  padding: 3rem 2rem;
-  border-top: 1px solid #c9a96e12;
-}
-
-.footer-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-}
-
-.footer-note {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 0.8rem;
-  opacity: 0.6;
-  letter-spacing: 0.2em;
-}
-
-/* ── SCROLL FADE IN ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .hero-content { margin-bottom: 32%; }
-  section { p
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>光㦓 létt｜QHHT 量子催眠</title>
+<meta name="description" content="光㦓 létt，女性專屬 QHHT 量子催眠。靈魂意識探索、多時空整合、前世回溯、高我連結。台北，平日預約。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--amber:#e8b86d;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 80%,#c97a2a22 0%,transparent 70%),radial-gradient(ellipse 100% 80% at 50% 100%,#3d1a0a55 0%,transparent 80%),linear-gradient(180deg,#0d0a07 0%,#1a1008 40%,#2a1a0a 70%,#1a0d05 100%);z-index:0}
+.sun{position:absolute;bottom:22%;left:50%;transform:translateX(-50%);width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#fff8e0 0%,#ffd97a 30%,#e8923a 60%,#c9600a 80%,transparent 100%);box-shadow:0 0 20px 10px #e8923a88,0 0 60px 30px #c9600a44,0 0 120px 60px #8a3a0a22;animation:pulse 4s ease-in-out infinite;z-index:1}
+@keyframes pulse{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.05)}}
+.hills{position:absolute;bottom:0;left:0;right:0;height:30%;z-index:2}
+.hero-content{position:relative;z-index:3;margin-bottom:28%}
+.brand-en{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,12vw,9rem);font-weight:300;font-style:italic;letter-spacing:.08em;color:var(--white);line-height:1;text-shadow:0 0 60px #c9a96e55;animation:fadeUp 1.2s ease both}
+.brand-zh{font-size:clamp(.85rem,2vw,1.1rem);letter-spacing:.5em;color:var(--gold);margin-top:.8rem;animation:fadeUp 1.2s ease .2s both}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.9rem,2.5vw,1.25rem);color:var(--muted);margin-top:2rem;letter-spacing:.1em;animation:fadeUp 1.2s ease .4s both}
+.divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.5rem auto;animation:fadeUp 1.2s ease .5s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+section{padding:6rem 2rem;max-width:720px;margin:0 auto}
+.section-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;letter-spacing:.4em;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.section-label::before,.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.section-label::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:300;line-height:1.3;color:var(--white);margin-bottom:1.5rem}
+.section-body{font-size:.95rem;line-height:2;color:var(--muted)}
+.about-section{text-align:center}
+.about-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,3.5vw,1.7rem);color:var(--soft);line-height:1.8;margin-bottom:2rem;position:relative;padding:0 1rem}
+.about-quote::before{content:'\201C';font-size:5rem;color:var(--gold);opacity:.25;position:absolute;top:-2rem;left:-.5rem;line-height:1;font-family:'Cormorant Garamond',serif}
+.service-card{border:1px solid #c9a96e22;border-radius:2px;padding:2rem;background:linear-gradient(135deg,#251c1400 0%,#c9a96e08 100%);position:relative;overflow:hidden;transition:border-color .4s,background .4s;margin-top:2.5rem}
+.service-card:hover{border-color:#c9a96e55;background:linear-gradient(135deg,#c9a96e08 0%,#c9a96e12 100%)}
+.service-icon{font-size:1.4rem;margin-bottom:.8rem}
+.service-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--white);margin-bottom:.6rem}
+.service-desc{font-size:.88rem;color:var(--muted);line-height:1.9}
+.qhht-section{background:linear-gradient(180deg,transparent,#c9a96e08,transparent);border-top:1px solid #c9a96e15;border-bottom:1px solid #c9a96e15;text-align:center;padding:5rem 2rem}
+.qhht-inner{max-width:680px;margin:0 auto}
+.qhht-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem;margin-top:3rem}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-style:italic;color:var(--gold);opacity:.5;line-height:1;margin-bottom:.5rem}
+.step-label{font-size:.82rem;letter-spacing:.2em;color:var(--soft)}
+.step-desc{font-size:.8rem;color:var(--muted);margin-top:.4rem;line-height:1.7}
+.for-who-list{list-style:none;margin-top:2rem;display:grid;gap:1rem}
+.for-who-list li{display:flex;align-items:flex-start;gap:1rem;font-size:.92rem;color:var(--muted);line-height:1.8}
+.for-who-list li::before{content:'◇';color:var(--gold);font-size:.7rem;margin-top:.45rem;flex-shrink:0}
+.notice-box{border:1px solid #c9a96e20;padding:2rem;margin-top:2rem;background:#c9a96e06;border-radius:2px}
+.notice-box p{font-size:.88rem;color:var(--muted);line-height:2}
+.notice-box strong{color:var(--soft);font-weight:400}
+.contact-section{text-align:center}
+.contact-section .section-body{margin-bottom:3rem}
+.contact-buttons{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.btn{display:inline-flex;align-items:center;gap:.8rem;padding:1rem 2.5rem;font-family:'Noto Serif TC',serif;font-size:.9rem;letter-spacing:.15em;text-decoration:none;transition:all .3s;min-width:260px;justify-content:center}
+.btn-primary{background:linear-gradient(135deg,#c9a96e,#e8b86d);color:var(--deep);border:none}
+.btn-primary:hover{background:linear-gradient(135deg,#e8b86d,#f0c97d);box-shadow:0 0 30px #c9a96e44;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--gold);border:1px solid #c9a96e55}
+.btn-secondary:hover{border-color:var(--gold);background:#c9a96e10;transform:translateY(-1px)}
+.info-line{font-size:.82rem;color:var(--muted);letter-spacing:.2em;margin-top:3rem}
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold);letter-spacing:.1em}
+.footer-note{font-size:.75rem;color:var(--muted);margin-top:.8rem;opacity:.6;letter-spacing:.2em}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.hero-content{margin-bottom:32%}section{padding:4rem 1.5rem}.qhht-section{padding:4rem 1.5rem}}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="sun"></div>
+<svg class="hills" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,300 L0,200 Q200,100 400,180 Q600,240 720,150 Q900,50 1100,160 Q1300,240 1440,180 L1440,300 Z" fill="#0d0a07"/>
+<path d="M0,300 L0,240 Q300,160 500,220 Q700,270 900,200 Q1100,140 1440,220 L1440,300 Z" fill="#100c08" opacity="0.9"/>
+</svg>
+<div class="hero-content">
+<div class="brand-en">létt</div>
+<div class="brand-zh">光 㦓</div>
+<div class="divider"></div>
+<div class="hero-tagline">QHHT 量子催眠　｜　女性專屬　｜　台北</div>
+</div>
+</section>
+<section class="about-section reveal">
+<div class="section-label">關於光㦓</div>
+<div class="about-quote">我一直希望，能夠幫助更多的人<br/>找回自己內在的聲音。<br/>這，就是我走上 QHHT 量子催眠的初心與使命。</div>
+<p class="section-body">光㦓 létt，是一個陪你回到自己的空間。<br/>透過 QHHT 量子催眠，引導你進入深層意識，<br/>探索靈魂的歷程，整合過去與當下，<br/>讓高我的智慧成為你前行的指引。</p>
+</section>
+<section class="reveal">
+<div class="section-label">服務項目</div>
+<h2 class="section-title">你可以在這裡探索的</h2>
+<div class="service-card">
+<div class="service-icon">🌀</div>
+<div class="service-name">QHHT 量子催眠</div>
+<div class="service-desc">由 Dolores Cannon 創立的深層催眠技術，引導你進入最深層的意識狀態，讓潛意識帶你找到屬於自己的答案。<br/><br/>在一次完整的 QHHT 療程中，你可能會經歷：</div>
+<ul style="list-style:none;margin-top:1.2rem;display:grid;gap:.8rem">
+<li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">前世回溯</strong>——回到靈魂曾走過的時空，理解當下生命中反覆出現的模式與課題</span></li>
+<li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">多時空整合</strong>——探索靈魂在不同時空的歷程，釋放積累的模式，回到內在的完整</span></li>
+<li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">高我連結 · Oversoul 指引</strong>——與更高維度的自我連結，接收屬於你的訊息與指引</span></li>
+<li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">內在意識探索</strong>——讓靈魂層面的智慧回應你此刻生命中真正的提問</span></li>
+</ul>
+</div>
+</section>
+<div class="qhht-section reveal">
+<div class="qhht-inner">
+<div class="section-label">療程流程</div>
+<h2 class="section-title">一次完整的旅程</h2>
+<p class="section-body">QHHT 療程通常需要 4–6 小時，是一段深度的內在旅程。<br/>請預留充足的時間，讓自己完全放鬆地進入。</p>
+<div class="qhht-steps">
+<div class="step"><div class="step-num">01</div><div class="step-label">訪談</div><div class="step-desc">深度聊聊你的生命故事與此行的提問</div></div>
+<div class="step"><div class="step-num">02</div><div class="step-label">引導入眠</div><div class="step-desc">以溫柔的引導帶你進入深層意識</div></div>
+<div class="step"><div class="step-num">03</div><div class="step-label">靈魂探索</div><div class="step-desc">回溯時空、連結高我、接收訊息</div></div>
+<div class="step"><div class="step-num">04</div><div class="step-label">整合回顧</div><div class="step-desc">療程後共同回顧，協助整合所見所感</div></div>
+</div>
+</div>
+</div>
+<section class="reveal">
+<div class="section-label">適合你嗎</div>
+<h2 class="section-title">你是否也有這樣的感受</h2>
+<ul class="for-who-list">
+<li>感覺生命卡住了，不知道方向在哪裡</li>
+<li>想了解自己反覆出現的情緒或關係模式</li>
+<li>對靈魂、前世、多時空有好奇與嚮往</li>
+<li>想與自己的高我或內在智慧連結</li>
+<li>身心有些說不清楚的狀態，想從深層找答案</li>
+<li>正在人生轉捩點，想獲得更深的指引</li>
+</ul>
+<div class="notice-box" style="margin-top:3rem">
+<p><strong>女性專屬空間</strong><br/>光㦓 létt 目前僅提供女性個案服務，<br/>在安全、溫柔的氛圍中陪你探索自己的內在。</p>
+</div>
+</section>
+<section class="contact-section reveal">
+<div class="section-label">預約療程</div>
+<h2 class="section-title">準備好了嗎？</h2>
+<p class="section-body">歡迎透過以下方式與我聯繫，<br/>預約前會先進行簡短的了解，<br/>確認彼此的緣分與時機。</p>
+<div class="contact-buttons">
+<a href="https://line.me/R/ti/p/@789irzch" target="_blank" class="btn btn-primary">LINE 官方帳號預約</a>
+<a href="https://www.instagram.com/be_ur_lett" target="_blank" class="btn btn-secondary">Instagram @be_ur_lett</a>
+</div>
+<div class="info-line">台北　｜　平日 10:00–17:00　｜　私訊預約</div>
+</section>
+<footer>
+<div class="footer-brand">létt 光㦓</div>
+<div class="footer-note">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
