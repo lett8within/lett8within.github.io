@@ -11,16 +11,146 @@
 :root{--gold:#c9a96e;--amber:#e8b86d;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
 html{scroll-behavior:smooth}
 body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 80%,#c97a2a22 0%,transparent 70%),radial-gradient(ellipse 100% 80% at 50% 100%,#3d1a0a55 0%,transparent 80%),linear-gradient(180deg,#0d0a07 0%,#1a1008 40%,#2a1a0a 70%,#1a0d05 100%);z-index:0}
-.sun{position:absolute;bottom:18%;left:50%;transform:translateX(-50%);width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#fff8e0 0%,#ffd97a 30%,#e8923a 60%,#c9600a 80%,transparent 100%);box-shadow:0 0 20px 10px #e8923a88,0 0 60px 30px #c9600a44,0 0 120px 60px #8a3a0a22;animation:pulse 4s ease-in-out infinite;z-index:1}
-@keyframes pulse{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.05)}}
-.hills{position:absolute;bottom:0;left:0;right:0;height:28%;z-index:2}
-.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);z-index:3;width:100%;text-align:center;padding:0 2rem}
-.hero-logo{width:clamp(160px,40vw,320px);opacity:0.92;filter:brightness(1.1);animation:fadeUp 1.2s ease both;display:block;margin:0 auto}
-.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.9rem,2vw,1.2rem);color:var(--muted);margin-top:2rem;letter-spacing:.1em;animation:fadeUp 1.2s ease .4s both}
-.divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.8rem auto 0;animation:fadeUp 1.2s ease .5s both}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(17,11,7,0);
+  border-bottom:1px solid transparent;
+  transition:background .5s ease,border-color .5s ease,backdrop-filter .5s ease;
+  pointer-events:none;
+  opacity:0;
+}
+.nav.visible{
+  opacity:1;
+  pointer-events:all;
+  background:rgba(17,11,7,.82);
+  border-color:#c9a96e18;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--gold);
+  letter-spacing:.25em;
+  text-decoration:none;
+  opacity:.85;
+}
+.nav-links{
+  display:flex;gap:2rem;list-style:none;
+}
+.nav-links a{
+  font-size:.75rem;letter-spacing:.3em;
+  color:var(--muted);text-decoration:none;
+  transition:color .3s;
+}
+.nav-links a:hover{color:var(--soft);}
+.nav-contact{
+  font-size:.75rem;letter-spacing:.25em;
+  color:var(--gold);text-decoration:none;
+  border:1px solid #c9a96e44;
+  padding:.35rem .9rem;
+  transition:border-color .3s,color .3s;
+}
+.nav-contact:hover{border-color:#c9a96eaa;color:var(--amber);}
+
+@media(max-width:680px){
+  .nav-links{display:none;}
+  .nav{padding:.9rem 1.4rem;}
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 80%,#c97a2a22 0%,transparent 70%),
+    radial-gradient(ellipse 100% 80% at 50% 100%,#3d1a0a55 0%,transparent 80%),
+    linear-gradient(180deg,#0d0a07 0%,#1a1008 40%,#2a1a0a 70%,#1a0d05 100%);
+  z-index:0;
+}
+/* Sun: anchored relative to bottom, scales with viewport */
+.sun{
+  position:absolute;
+  bottom:clamp(14%,20%,22%);
+  left:50%;
+  transform:translateX(-50%);
+  width:clamp(56px,8vw,96px);
+  height:clamp(56px,8vw,96px);
+  border-radius:50%;
+  background:radial-gradient(circle,#fff8e0 0%,#ffd97a 30%,#e8923a 60%,#c9600a 80%,transparent 100%);
+  box-shadow:0 0 20px 10px #e8923a88,0 0 60px 30px #c9600a44,0 0 120px 60px #8a3a0a22;
+  animation:pulse 4s ease-in-out infinite;
+  z-index:1;
+}
+@keyframes pulse{
+  0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}
+  50%{opacity:1;transform:translateX(-50%) scale(1.05)}
+}
+.hills{
+  position:absolute;bottom:0;left:0;right:0;
+  height:clamp(22%,28%,32%);
+  z-index:2;
+}
+/* Hero content: flexbox centred in the upper ~65% of the hero,
+   so it never overlaps the hills regardless of viewport height */
+.hero-content{
+  position:relative;
+  z-index:3;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  /* push content into the visual "sky" area, clear of the hills */
+  margin-top:clamp(4rem,12vh,9rem);
+  padding:0 clamp(1.2rem,5vw,3rem);
+}
+.hero-logo{
+  width:clamp(140px,38vw,300px);
+  opacity:0.92;
+  filter:brightness(1.1);
+  animation:fadeUp 1.2s ease both;
+  display:block;
+}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(.95rem,2vw,1.2rem);
+  color:var(--muted);
+  margin-top:1.6rem;
+  letter-spacing:.08em;
+  line-height:1.75;
+  animation:fadeUp 1.2s ease .4s both;
+}
+.divider{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.6rem auto 0;
+  animation:fadeUp 1.2s ease .5s both;
+}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Mobile-specific hero tweaks */
+@media(max-width:480px){
+  .hero-content{margin-top:clamp(3rem,10vh,5rem);}
+  .sun{bottom:16%;}
+}
+
+/* ── SECTIONS ── */
 section{padding:6rem 2rem;max-width:720px;margin:0 auto}
 .section-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;letter-spacing:.4em;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
 .section-label::before,.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
@@ -70,7 +200,19 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </head>
 <body>
 
-<section class="hero">
+<!-- ── 導覽列 ── -->
+<nav class="nav" id="mainNav" aria-label="主要導覽">
+  <a href="#hero" class="nav-logo">光㦓 létt</a>
+  <ul class="nav-links">
+    <li><a href="#about">關於</a></li>
+    <li><a href="#service">服務</a></li>
+    <li><a href="#process">流程</a></li>
+    <li><a href="#for-who">適合你嗎</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
 <div class="hero-bg"></div>
 <div class="sun"></div>
 <svg class="hills" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,17 +222,19 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <div class="hero-content">
 <img src="logo.png" alt="光㦓 létt" class="hero-logo"/>
 <div class="divider"></div>
-<div class="hero-tagline">QHHT 量子催眠　｜　女性專屬　｜　台北</div>
+<div class="hero-tagline">The way back to your inner knowing.</div>
 </div>
 </section>
 
-<section class="about-section reveal">
+<!-- ── 關於 ── -->
+<section class="about-section reveal" id="about">
 <div class="section-label">關於光㦓</div>
 <div class="about-quote">我一直希望，能夠幫助更多的人<br/>找回自己內在的聲音。<br/>這，就是我走上 QHHT 量子催眠的初心與使命。</div>
 <p class="section-body">光㦓 létt，是一個陪你回到自己的空間。<br/>透過 QHHT 量子催眠，引導你進入深層意識，<br/>探索靈魂的歷程，整合過去與當下，<br/>讓高我的智慧成為你前行的指引。</p>
 </section>
 
-<section class="reveal">
+<!-- ── 服務 ── -->
+<section class="reveal" id="service">
 <div class="section-label">服務項目</div>
 <div class="service-card">
 <div class="service-name">QHHT 量子催眠</div>
@@ -104,7 +248,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </div>
 </section>
 
-<div class="qhht-section reveal">
+<!-- ── 流程 ── -->
+<div class="qhht-section reveal" id="process">
 <div class="qhht-inner">
 <div class="section-label">療程流程</div>
 <h2 class="section-title">一次完整的旅程</h2>
@@ -118,7 +263,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </div>
 </div>
 
-<section class="reveal">
+<!-- ── 適合你嗎 ── -->
+<section class="reveal" id="for-who">
 <div class="section-label">適合你嗎</div>
 <h2 class="section-title">你是否也有這樣的感受</h2>
 <ul class="for-who-list">
@@ -134,47 +280,71 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </div>
 </section>
 
-<section class="contact-section reveal">
+<!-- ── 預約 ── -->
+<section class="contact-section reveal" id="contact">
 <div class="section-label">預約療程</div>
 <h2 class="section-title">準備好了嗎？</h2>
 <p class="section-body">如果你感覺到了某種呼喚，<br/>那或許就是開始的時機。<br/>歡迎私訊預約。</p>
 <div class="contact-buttons">
-<a href="https://line.me/R/ti/p/@789irzch" target="_blank" class="btn btn-primary">LINE預約</a>
-<a href="https://www.instagram.com/be_ur_lett" target="_blank" class="btn btn-primary">IG私訊預約</a>
+<a href="https://line.me/R/ti/p/@789irzch" target="_blank" class="btn btn-primary">LINE 預約</a>
+<a href="https://www.instagram.com/be_ur_lett" target="_blank" class="btn btn-primary">IG 私訊預約</a>
 </div>
 <div class="info-line">台北　｜　平日 10:00–17:00　｜　私訊預約</div>
 </section>
 
+<!-- ── Cards ── -->
 <div class="cards-section reveal">
 <div class="cards-grid">
-
 <div class="card">
 <div class="card-tag">靈魂歷程整合</div>
 <div class="card-text">不是尋找過去，也不是追求未來，<br/>而是回到靈魂此刻正在展開的多條生命線，<br/>看見與你當下最有關聯的能量片段，<br/>並將它們帶回整體的平衡與和諧。</div>
 </div>
-
 <div class="card">
 <div class="card-tag">關於你看見的畫面</div>
 <div class="card-text">你所體驗的<br/>並不只是前世。<br/>而是你平行時空中<br/>另一條正在展開的故事線。<br/><br/>這些畫面之所以浮現，<br/>是因為它們與你現在的生命課題產生共振，<br/>正在尋求被理解、被整合。</div>
 </div>
-
 <div class="card">
 <div class="card-tag">你是多次元的存在</div>
 <div class="card-text">這個過程，是為了讓你記起<br/>你是「多次元的存在」。<br/><br/>也因此，你會有機會與那些<br/>在不同時空體驗的「其他自己」相遇，<br/>並把這份共同的理解<br/>帶回此刻的你。<br/><br/>這是一段回到「整體」的旅程。</div>
 </div>
-
 </div>
 </div>
 
+<!-- ── Footer ── -->
 <footer>
 <img src="logo.png" alt="光㦓 létt" style="width:120px;opacity:0.6;display:block;margin:0 auto"/>
 <div class="footer-note">QHHT 量子催眠　·　女性專屬　·　台北</div>
 </footer>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
-reveals.forEach(r=>observer.observe(r));
+// ── Reveal on scroll ──
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => revealObserver.observe(r));
+
+// ── Nav: appear after scrolling past hero ──
+const nav = document.getElementById('mainNav');
+const hero = document.getElementById('hero');
+
+const navObserver = new IntersectionObserver((entries) => {
+  // When hero leaves viewport, show nav; when hero is visible, hide nav
+  entries.forEach(e => {
+    if (!e.isIntersecting) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+navObserver.observe(hero);
 </script>
 </body>
 </html>
