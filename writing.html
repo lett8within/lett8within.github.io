@@ -105,7 +105,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <div class="posts">
 
   <!-- 須知卡片 -->
-  <a href="post-notice.html" class="notice-card reveal">
+  <a href="post-notice.html" class="notice-card">
     <div>
       <div class="notice-card-label">預約說明</div>
       <div class="notice-card-title">預約前請先閱讀</div>
@@ -124,6 +124,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <script>
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
 reveals.forEach(r=>observer.observe(r));
