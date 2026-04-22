@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>如果這一生是一首歌｜光㦓 létt</title>
+<meta name="description" content="催眠不是去找一個正確答案或前世真相，而是讓你有機會跟那個更大的自己對接。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;user-select:none;-webkit-user-select:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+@media(max-width:600px){nav{padding:1rem 1.5rem}}
+
+/* HERO */
+.post-hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 2rem 4rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0a07 0%,#1a1008 50%,#2a1a0a 100%);
+}
+.post-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 70%,#c97a2a12 0%,transparent 70%);
+}
+.post-hero-content{position:relative;z-index:1;max-width:600px}
+.post-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.5em;color:var(--gold);opacity:.7;
+  margin-bottom:1.5rem;
+}
+.post-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:300;color:var(--white);line-height:1.4;
+  margin-bottom:1.2rem;
+}
+.post-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.8rem auto;
+}
+.post-subtitle{font-size:.85rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
+
+/* BODY */
+.post-body{max-width:640px;margin:0 auto;padding:4rem 2rem 8rem}
+
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.85rem;letter-spacing:.2em;
+  color:var(--gold);text-decoration:none;opacity:.7;
+  transition:opacity .3s;margin-bottom:3.5rem;
+}
+.back-link:hover{opacity:1}
+
+.post-body p{
+  font-size:.95rem;line-height:2.1;
+  color:var(--muted);margin-bottom:1.6rem;
+}
+
+.highlight{
+  font-family:'Noto Serif TC',serif;font-style:normal;
+  font-size:clamp(1rem,2.8vw,1.25rem);
+  color:var(--soft);line-height:2.1;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:2.5rem 1.5rem;
+  border-top:1px solid #c9a96e20;
+  border-bottom:1px solid #c9a96e20;
+  margin:3rem 0;
+}
+
+.section-break{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:3rem auto;
+}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+@media(max-width:600px){.post-body{padding:3rem 1.5rem 6rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="writing.html" class="nav-link">文字空間</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-hero-content">
+    <div class="post-label">光㦓 létt</div>
+    <h1 class="post-title">如果這一生是一首歌</h1>
+    <div class="post-divider"></div>
+    <p class="post-subtitle">關於催眠，與那個更大的自己</p>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <a href="writing.html" class="back-link">← 返回文字空間</a>
+
+  <div class="reveal">
+    <p style="font-size:1.05rem;color:var(--soft);margin-bottom:2rem">我相信，我們不只是一具身體。</p>
+    <p>我們的每一個念頭、每一次深刻的感受、每一個夢，都不會白白消失。它們都被存放在靈魂的記錄裡。</p>
+    <p>肉體會老、會生病，也終究會離開。可是你曾經怎麼看待自己、怎麼面對世界、怎麼選擇回應生命，這整個「運作的模式」，都會被靈魂收下，成為「大我」的一部分。</p>
+  </div>
+
+  <div class="highlight reveal">
+    如果說這一生是一首歌，<br/>那催眠，就像讓你有機會回頭聽見：<br/><br/>
+    這首歌是怎麼被寫出來的；<br/>
+    哪些旋律，<br/>是你曾經無意識地反覆演唱；<br/>
+    哪些段落，<br/>其實你早已不想再照原來的方式唱下去。
+  </div>
+
+  <div class="reveal">
+    <p>對我來說，催眠不是去找一個「正確答案」或「前世真相」，而是讓你在一個安全的狀態裡，有機會跟那個「更大的自己」對接。</p>
+    <p>在過程裡，不管你看到的是畫面、感覺、顏色，還是光影，那都不是幻想，而是一種連結。</p>
+    <p>那些片段很重要。因為它讓你身歷其境地去感受、去同理、去走進那個故事裡。你不是在旁觀，而是在經歷。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>但重點從來不在於，那是不是你的前世，那個身分是不是真的存在過。</p>
+    <p>真正重要的是：這個故事正在告訴你什麼？</p>
+    <p>它映照出你現在生命裡的哪一種模式？</p>
+    <p>它讓你看見了什麼你一直在重複、卻沒有察覺的選擇？</p>
+    <p>我相信，你不是隨機長成現在這個樣子。你不是突然被丟到這個家庭、這個關係、這個身體裡。</p>
+    <p>你是有脈絡、有延續地走到這裡。而你所有的經歷，都在這一生的歌裡，留下了痕跡。</p>
+  </div>
+
+  <div class="highlight reveal">
+    如果這一次，<br/>能讓你鬆動一點點舊有的慣性，<br/>願意嘗試一條你以前不敢走的路，<br/><br/>
+    那它就已經足夠真實。<br/>
+    因為改寫旋律的，不是那些浮現的片段，<br/>而是你此刻的選擇。
+  </div>
+
+  <a href="writing.html" class="back-link reveal">← 返回文字空間</a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
