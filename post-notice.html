@@ -206,6 +206,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <script>
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
 reveals.forEach(r=>observer.observe(r));
