@@ -242,7 +242,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <div class="section-label">服務項目</div>
 <div class="service-card">
 <div class="service-name">QHHT 量子催眠</div>
-<div class="service-desc">這是一種由 Dolores Cannon 發展的深層催眠方式。透過引導與放鬆，你會慢慢進入內在的意識狀態，暫時鬆開頭腦的運作，讓潛意識自然浮現出此刻對你而言重要的訊息。<br/><br/>在一次完整的 QHHT 過程中，你可能會經歷：</div>
+<div class="service-desc">這是一種由 Dolores Cannon 發展的深層催眠方式。<br/>透過引導與放鬆，你會慢慢進入內在的意識狀態，暫時鬆開頭腦的運作，<br/>讓潛意識自然浮現出此刻對你而言重要的訊息。<br/><br/>在一次完整的 QHHT 過程中，你可能會經歷：</div>
 <ul style="list-style:none;margin-top:1.2rem;display:grid;gap:.8rem">
 <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">前世回溯</strong> 回到靈魂曾走過的時空，理解當下生命中反覆出現的模式與課題</span></li>
 <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.88rem;color:var(--muted);line-height:1.8"><span style="color:var(--gold);margin-top:.3rem">◇</span><span><strong style="color:var(--soft);font-weight:400">多時空整合</strong> 探索靈魂在不同時空的歷程，釋放積累的模式，回到內在的完整</span></li>
@@ -262,7 +262,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <div class="step"><div class="step-num">01</div><div class="step-label">訪談</div><div class="step-desc">深度聊聊你的生命故事與此行的提問</div></div>
 <div class="step"><div class="step-num">02</div><div class="step-label">引導入眠</div><div class="step-desc">以溫柔的引導帶你進入深層意識</div></div>
 <div class="step"><div class="step-num">03</div><div class="step-label">靈魂探索</div><div class="step-desc">回溯時空、連結高我、接收訊息</div></div>
-<div class="step"><div class="step-num">04</div><div class="step-label">整合回顧</div><div class="step-desc">共同回顧催眠中的所見所感，協助應用於日常生活</div></div>
+<div class="step"><div class="step-num">04</div><div class="step-label">整合回顧</div><div class="step-desc">共同回顧催眠中的所見所感，<br/>協助應用於日常生活</div></div>
 </div>
 </div>
 </div>
@@ -321,6 +321,10 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </footer>
 
 <script>
+// ── 鎖右鍵與選取 ──
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+
 // ── Reveal on scroll ──
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
