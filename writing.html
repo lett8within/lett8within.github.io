@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>文字空間｜光㦓 létt</title>
+<meta name="description" content="光㦓 létt 的文字空間，記錄關於靈魂、催眠與內在探索的思考與故事。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+
+/* HEADER */
+.page-header{padding:10rem 2rem 5rem;text-align:center;position:relative}
+.page-header::after{content:'';display:block;width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:2rem auto 0}
+.page-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;letter-spacing:.5em;color:var(--gold);margin-bottom:1rem}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:300;color:var(--white);letter-spacing:.1em}
+.page-subtitle{font-size:.88rem;color:var(--muted);margin-top:1rem;letter-spacing:.1em}
+
+/* POSTS GRID */
+.posts{max-width:1000px;margin:0 auto;padding:3rem 1.5rem 8rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}
+
+/* 一般文章卡片 */
+.post-card{display:block;text-decoration:none;border:1px solid #c9a96e18;background:linear-gradient(145deg,#1e160e,#251a10);position:relative;overflow:hidden;transition:border-color .4s,transform .3s}
+.post-card:hover{border-color:#c9a96e44;transform:translateY(-4px)}
+.post-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#c9a96e66,transparent);opacity:0;transition:opacity .4s}
+.post-card:hover::before{opacity:1}
+
+.post-cover{width:100%;aspect-ratio:4/3;overflow:hidden;position:relative;background:linear-gradient(135deg,#1a0d05,#2d1a0a)}
+.post-cover-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center}
+.post-cover-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,3vw,1.3rem);color:var(--soft);line-height:1.7;opacity:.9}
+.post-cover-deco{position:absolute;bottom:1.2rem;right:1.5rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.7rem;letter-spacing:.2em;color:var(--gold);opacity:.5}
+
+.post-info{padding:1.5rem 1.8rem 1.8rem}
+.post-date{font-size:.72rem;letter-spacing:.3em;color:var(--gold);opacity:.6;margin-bottom:.6rem}
+.post-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--white);line-height:1.4;margin-bottom:.8rem}
+.post-excerpt{font-size:.82rem;color:var(--muted);line-height:1.9}
+.post-read{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;letter-spacing:.2em;color:var(--gold);opacity:.7;transition:opacity .3s}
+.post-card:hover .post-read{opacity:1}
+
+/* 須知卡片 — 獨立樣式，較素淨 */
+.notice-card{
+  display:block;text-decoration:none;
+  border:1px solid #c9a96e28;
+  background:linear-gradient(145deg,#1a1208,#1e1509);
+  position:relative;overflow:hidden;
+  transition:border-color .4s,transform .3s;
+  padding:2.2rem 2rem 2rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.notice-card:hover{border-color:#c9a96e55;transform:translateY(-4px)}
+.notice-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#c9a96e44,transparent);opacity:0;transition:opacity .4s}
+.notice-card:hover::before{opacity:1}
+.notice-card-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.72rem;letter-spacing:.4em;
+  color:var(--gold);opacity:.6;margin-bottom:1.2rem;
+}
+.notice-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;color:var(--white);
+  line-height:1.4;margin-bottom:.9rem;
+}
+.notice-card-desc{font-size:.82rem;color:var(--muted);line-height:1.9;margin-bottom:1.4rem}
+.notice-card-read{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.8rem;letter-spacing:.2em;
+  color:var(--gold);opacity:.6;transition:opacity .3s;
+}
+.notice-card:hover .notice-card-read{opacity:1}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){nav{padding:1rem 1.5rem}.posts{grid-template-columns:1fr;gap:1.5rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="index.html" class="nav-link">首頁</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-label">writing space</div>
+  <h1 class="page-title">文字空間</h1>
+  <p class="page-subtitle">關於靈魂、催眠與內在探索的思考與記錄</p>
+</div>
+
+<div class="posts">
+
+  <!-- 須知卡片 -->
+  <a href="post-notice.html" class="notice-card reveal">
+    <div>
+      <div class="notice-card-label">預約說明</div>
+      <div class="notice-card-title">預約前請先閱讀</div>
+      <div class="notice-card-desc">關於 QHHT 的參與條件、時間規範與基本說明。希望你在來之前，對這個過程有清楚的認識。</div>
+    </div>
+    <div class="notice-card-read">閱讀說明 →</div>
+  </a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>

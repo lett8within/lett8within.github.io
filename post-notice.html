@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>預約前請先閱讀｜光㦓 létt</title>
+<meta name="description" content="預約 QHHT 量子催眠前，請先閱讀相關說明與注意事項。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+@media(max-width:600px){nav{padding:1rem 1.5rem}}
+
+/* HERO */
+.post-hero{
+  min-height:55vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 2rem 4rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0a07 0%,#1a1008 50%,#2a1a0a 100%);
+}
+.post-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 70%,#c97a2a12 0%,transparent 70%);
+}
+.post-hero-content{position:relative;z-index:1;max-width:600px}
+.post-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.5em;color:var(--gold);opacity:.7;
+  margin-bottom:1.5rem;
+}
+.post-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4.5vw,2.6rem);
+  font-weight:300;color:var(--white);line-height:1.35;
+  margin-bottom:1.2rem;
+}
+.post-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.8rem auto;
+}
+.post-subtitle{font-size:.85rem;color:var(--muted);letter-spacing:.08em;line-height:1.8}
+
+/* BODY */
+.post-body{max-width:640px;margin:0 auto;padding:4rem 2rem 8rem}
+
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.85rem;letter-spacing:.2em;
+  color:var(--gold);text-decoration:none;opacity:.7;
+  transition:opacity .3s;margin-bottom:3.5rem;
+}
+.back-link:hover{opacity:1}
+
+/* 聲明框 */
+.notice-statement{
+  border:1px solid #c9a96e28;
+  background:#c9a96e06;
+  padding:1.8rem 2rem;
+  margin-bottom:3.5rem;
+  text-align:center;
+}
+.notice-statement p{
+  font-size:.88rem;color:var(--muted);line-height:2;
+}
+
+/* 區塊標題 */
+.block-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.45em;
+  color:var(--gold);opacity:.75;
+  margin-bottom:1.6rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.block-label::before,.block-label::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,#c9a96e44);
+}
+.block-label::after{
+  background:linear-gradient(90deg,#c9a96e44,transparent);
+}
+
+/* 項目列表 */
+.notice-list{
+  list-style:none;
+  display:grid;gap:1.4rem;
+  margin-bottom:3.5rem;
+}
+.notice-list li{
+  display:flex;align-items:flex-start;gap:1rem;
+  font-size:.9rem;color:var(--muted);line-height:1.85;
+}
+.notice-list li::before{
+  content:'◇';color:var(--gold);
+  font-size:.65rem;margin-top:.5rem;flex-shrink:0;
+}
+
+/* 時間規範區塊 */
+.time-block{
+  border-top:1px solid #c9a96e15;
+  border-bottom:1px solid #c9a96e15;
+  padding:2.2rem 0;
+  margin-bottom:3.5rem;
+}
+.time-block p{
+  font-size:.9rem;color:var(--muted);line-height:2;margin-bottom:1rem;
+}
+.time-block p:last-child{margin-bottom:0}
+.time-block strong{color:var(--soft);font-weight:400}
+
+/* 結尾 */
+.closing{
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.25rem);
+  color:var(--soft);line-height:1.8;opacity:.8;
+  margin-bottom:3.5rem;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){.post-body{padding:3rem 1.5rem 6rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="writing.html" class="nav-link">文字空間</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-hero-content">
+    <div class="post-label">光㦓 létt · 預約說明</div>
+    <h1 class="post-title">預約前請先閱讀</h1>
+    <div class="post-divider"></div>
+    <p class="post-subtitle">希望你在來之前，對這個過程有清楚的認識</p>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <a href="writing.html" class="back-link">← 返回文字空間</a>
+
+  <!-- 醫療聲明 -->
+  <div class="notice-statement reveal">
+    <p>QHHT 量子催眠不屬於醫療行為，<br/>無法取代任何形式的醫學治療。<br/>如果你目前有重大身心狀況，<br/>請優先尋求專業醫療協助。</p>
+  </div>
+
+  <!-- 參與條件 -->
+  <div class="reveal">
+    <div class="block-label">參與條件</div>
+    <ul class="notice-list">
+      <li>須由本人自願參與，不接受他人代替或強制安排的預約。</li>
+      <li>個案需年滿 18 歲以上。</li>
+      <li>催眠過程僅限催眠師與個案單獨進行，無法有第三方陪同在場。</li>
+      <li>若經醫師診斷為精神分裂症或多重人格，目前暫不適合進行 QHHT。</li>
+      <li>QHHT 須面對面進行，無法以線上方式替代。</li>
+    </ul>
+  </div>
+
+  <!-- 時間規範 -->
+  <div class="reveal">
+    <div class="block-label">時間與流程</div>
+    <div class="time-block">
+      <p>催眠前建議<strong>適量進食</strong>，避免空腹或過飽影響體驗。</p>
+      <p>每次療程以 <strong>1.5 小時</strong>為基準。若因個人因素（例如頻繁查看手機、多次離席、飲食等）反覆中斷過程，導致時間大幅延長，將視情況酌收延長費用，或保有結束此次引導的權利。</p>
+      <p>催眠過程會進行<strong>錄音</strong>（須經雙方同意），錄音內容將於療程結束後提供給你作為回顧。</p>
+    </div>
+  </div>
+
+  <!-- 結尾 -->
+  <div class="closing reveal">
+    如果你已準備好，<br/>帶著清醒與開放的心來就好。
+  </div>
+
+  <a href="writing.html" class="back-link reveal">← 返回文字空間</a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
