@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>有些東西，正在悄悄鬆動｜光㦓 létt</title>
+<meta name="description" content="改變從來不只是發生在催眠的那一刻，而是在每一個我們願意如實面對自己的瞬間。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;user-select:none;-webkit-user-select:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+@media(max-width:600px){nav{padding:1rem 1.5rem}}
+
+/* HERO */
+.post-hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 2rem 4rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0a07 0%,#1a1008 50%,#2a1a0a 100%);
+}
+.post-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 70%,#c97a2a12 0%,transparent 70%);
+}
+.post-hero-content{position:relative;z-index:1;max-width:600px}
+.post-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.5em;color:var(--gold);opacity:.7;
+  margin-bottom:1.5rem;
+}
+.post-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:300;color:var(--white);line-height:1.4;
+  margin-bottom:1.2rem;
+}
+.post-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.8rem auto;
+}
+.post-subtitle{font-size:.85rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
+
+/* BODY */
+.post-body{max-width:640px;margin:0 auto;padding:4rem 2rem 8rem}
+
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.85rem;letter-spacing:.2em;
+  color:var(--gold);text-decoration:none;opacity:.7;
+  transition:opacity .3s;margin-bottom:3.5rem;
+}
+.back-link:hover{opacity:1}
+
+.post-body p{
+  font-size:.95rem;line-height:2.1;
+  color:var(--muted);margin-bottom:1.6rem;
+}
+
+.highlight{
+  font-family:'Noto Serif TC',serif;font-style:normal;
+  font-size:clamp(1rem,2.8vw,1.25rem);
+  color:var(--soft);line-height:2.1;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:2.5rem 1.5rem;
+  border-top:1px solid #c9a96e20;
+  border-bottom:1px solid #c9a96e20;
+  margin:3rem 0;
+}
+
+.section-break{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:3rem auto;
+}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+@media(max-width:600px){.post-body{padding:3rem 1.5rem 6rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="writing.html" class="nav-link">文字空間</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-hero-content">
+    <div class="post-label">光㦓 létt</div>
+    <h1 class="post-title">有些東西，正在悄悄鬆動</h1>
+    <div class="post-divider"></div>
+    <p class="post-subtitle">關於進不了狀態，與那些看不見的收穫</p>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <a href="writing.html" class="back-link">← 返回文字空間</a>
+
+  <div class="reveal">
+    <p>另一個影響催眠的因素，是我們的頭腦意識是否願意放下對「掌控」的執著。如果對失去控制權有強烈的恐懼，那麼在進入催眠狀態的過程中，就會有一道無形的牆擋在前方。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>即便如此，如果那一次的催眠過程中你沒有順利進入狀態，也不需要太失望。因為，光是你願意走進來，願意開始探索，就已經是靈魂很大的跨越了。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>我們其實已經看見了一些重要的東西。我們對自己的理解更深了，我們意識到：「原來在面對失去控制權的情境時，我會這麼強烈地反抗，我會感到恐懼、焦躁、甚至生氣。」這些感受不是錯誤，它們也是自我覺察的一部分，是那一天我們收到的禮物。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>改變從來不只是發生在催眠的那一刻，而是在每一個我們願意如實面對自己的瞬間。就算那天你覺得什麼都沒看見，也請相信，有些東西正在你心裡悄悄鬆動。</p>
+    <p>因為，每一次內在的探索，都是回家的方向。</p>
+  </div>
+
+  <a href="writing.html" class="back-link reveal">← 返回文字空間</a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
