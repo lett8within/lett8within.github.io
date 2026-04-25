@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>一場多維度的共創｜光㦓 létt</title>
+<meta name="description" content="整合不總是為了我們的人類面向，有時候，我們的肉身也能成為一種支持。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X3HNNPTQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3X3HNNPTQ5');
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;user-select:none;-webkit-user-select:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+@media(max-width:600px){nav{padding:1rem 1.5rem}}
+
+/* HERO */
+.post-hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 2rem 4rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0a07 0%,#1a1008 50%,#2a1a0a 100%);
+}
+.post-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 70%,#c97a2a12 0%,transparent 70%);
+}
+.post-hero-content{position:relative;z-index:1;max-width:600px}
+.post-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.5em;color:var(--gold);opacity:.7;
+  margin-bottom:1.5rem;
+}
+.post-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:300;color:var(--white);line-height:1.4;
+  margin-bottom:1.2rem;
+}
+.post-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.8rem auto;
+}
+.post-subtitle{font-size:.85rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
+
+/* BODY */
+.post-body{max-width:640px;margin:0 auto;padding:4rem 2rem 8rem}
+
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.85rem;letter-spacing:.2em;
+  color:var(--gold);text-decoration:none;opacity:.7;
+  transition:opacity .3s;margin-bottom:3.5rem;
+}
+.back-link:hover{opacity:1}
+
+.post-body p{
+  font-size:.95rem;line-height:2.1;
+  color:var(--muted);margin-bottom:1.6rem;
+}
+
+.highlight{
+  font-family:'Noto Serif TC',serif;font-style:normal;
+  font-size:clamp(1rem,2.8vw,1.25rem);
+  color:var(--soft);line-height:2.1;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:2.5rem 1.5rem;
+  border-top:1px solid #c9a96e20;
+  border-bottom:1px solid #c9a96e20;
+  margin:3rem 0;
+}
+
+.section-break{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:3rem auto;
+}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+@media(max-width:600px){.post-body{padding:3rem 1.5rem 6rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="writing.html" class="nav-link">文字空間</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-hero-content">
+    <div class="post-label">光㦓 létt</div>
+    <h1 class="post-title">一場多維度的共創</h1>
+    <div class="post-divider"></div>
+    <p class="post-subtitle">有時候，我們的肉身也能成為一種支持。</p>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <a href="writing.html" class="back-link">← 返回文字空間</a>
+
+  <div class="reveal">
+    <p>最近一次催眠的經驗，讓我再一次深深體會到，我們的高我、指導靈，和我們三維世界的肉身，是一個互相合作的團隊。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>這位個案並沒有什麼需要轉化的需求，她這趟來，卻是為了幫助她的指導靈，找回在亞特蘭提斯時期遺忘的記憶碎片與能力。</p>
+    <p>在催眠的過程中，她像是一個門戶，協助指導靈取回那些失落的片段，而這些重新回歸的資訊與能量，也同步整合回她自身的系統裡。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>我覺得這一切真的很美、很特別，也很神奇。</p>
+    <p>那一刻我突然明白，整合不總是為了我們的「人類面向」，有時候，我們的肉身也能成為一種支持。</p>
+  </div>
+
+  <div class="highlight reveal">
+    這不只是轉化，而是一場靈魂之間的互助，<br/>
+    是一種跨維度的合作與整合。<br/><br/>
+    我們，不只是被改變的對象，<br/>
+    我們也是協助整體意識回歸完整的一份子。
+  </div>
+
+  <div class="reveal">
+    <p>能參與並見證這樣的旅程，很榮幸，也很感恩。</p>
+  </div>
+
+  <a href="writing.html" class="back-link reveal">← 返回文字空間</a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
