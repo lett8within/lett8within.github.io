@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>不是「我」在做｜光㦓 létt</title>
+<meta name="description" content="我信任每一個靈魂，都知道自己的路。我只是創造場域，讓轉化自然發生。"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X3HNNPTQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3X3HNNPTQ5');
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;user-select:none;-webkit-user-select:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(18,10,6,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:#c9a96e18}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);text-decoration:none}
+.nav-link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;letter-spacing:.35em;color:var(--muted);text-decoration:none;transition:color .3s}
+.nav-link:hover{color:var(--soft)}
+@media(max-width:600px){nav{padding:1rem 1.5rem}}
+
+/* HERO */
+.post-hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 2rem 4rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0a07 0%,#1a1008 50%,#2a1a0a 100%);
+}
+.post-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 70%,#c97a2a12 0%,transparent 70%);
+}
+.post-hero-content{position:relative;z-index:1;max-width:600px}
+.post-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.75rem;letter-spacing:.5em;color:var(--gold);opacity:.7;
+  margin-bottom:1.5rem;
+}
+.post-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4.5vw,2.8rem);
+  font-weight:300;color:var(--white);line-height:1.4;
+  margin-bottom:1.2rem;
+}
+.post-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:1.8rem auto;
+}
+.post-subtitle{font-size:.85rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
+
+/* BODY */
+.post-body{max-width:640px;margin:0 auto;padding:4rem 2rem 8rem}
+
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.85rem;letter-spacing:.2em;
+  color:var(--gold);text-decoration:none;opacity:.7;
+  transition:opacity .3s;margin-bottom:3.5rem;
+}
+.back-link:hover{opacity:1}
+
+.post-body p{
+  font-size:.95rem;line-height:2.1;
+  color:var(--muted);margin-bottom:1.6rem;
+}
+
+.highlight{
+  font-family:'Noto Serif TC',serif;font-style:normal;
+  font-size:clamp(1rem,2.8vw,1.25rem);
+  color:var(--soft);line-height:2.1;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:2.5rem 1.5rem;
+  border-top:1px solid #c9a96e20;
+  border-bottom:1px solid #c9a96e20;
+  margin:3rem 0;
+}
+
+.section-break{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:3rem auto;
+}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);opacity:.6;letter-spacing:.2em}
+
+@media(max-width:600px){.post-body{padding:3rem 1.5rem 6rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">létt</a>
+  <a href="writing.html" class="nav-link">文字空間</a>
+</nav>
+
+<div class="post-hero">
+  <div class="post-hero-content">
+    <div class="post-label">光㦓 létt</div>
+    <h1 class="post-title">不是「我」在做</h1>
+    <div class="post-divider"></div>
+    <p class="post-subtitle">關於引導者的位置，與能量場域的流動</p>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <a href="writing.html" class="back-link">← 返回文字空間</a>
+
+  <div class="reveal">
+    <p>我信任每一個靈魂，都知道自己的路。我只是創造場域，讓轉化自然發生。</p>
+    <p>一切的展開，都在他們靈魂的時間軸裡進行。</p>
+  </div>
+
+  <div class="section-break reveal"></div>
+
+  <div class="reveal">
+    <p>我見證了原始神性在三維世界中的落地與整合，也見證了能量修復的溫柔美好過程。</p>
+  </div>
+
+  <div class="highlight reveal">
+    我理解，不是「我」在做，<br/>
+    我只是提供了一個能量場，<br/>
+    讓一切在愛與光之中自然流動。
+  </div>
+
+  <a href="writing.html" class="back-link reveal">← 返回文字空間</a>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="光㦓 létt" style="width:100px;opacity:0.5;display:block;margin:0 auto"/>
+  <div class="footer-note" style="margin-top:1rem">QHHT 量子催眠　·　女性專屬　·　台北</div>
+</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
