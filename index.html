@@ -98,7 +98,6 @@ body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;
     linear-gradient(180deg,#0d0a07 0%,#1a1008 40%,#2a1a0a 70%,#1a0d05 100%);
   z-index:0;
 }
-/* Sun: anchored relative to bottom, scales with viewport */
 .sun{
   position:absolute;
   bottom:clamp(14%,20%,22%);
@@ -121,8 +120,6 @@ body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;
   height:clamp(22%,28%,32%);
   z-index:2;
 }
-/* Hero content: flexbox centred in the upper ~65% of the hero,
-   so it never overlaps the hills regardless of viewport height */
 .hero-content{
   position:relative;
   z-index:3;
@@ -130,7 +127,6 @@ body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;
   display:flex;
   flex-direction:column;
   align-items:center;
-  /* push content into the visual "sky" area, clear of the hills */
   margin-top:clamp(4rem,12vh,9rem);
   padding:0 clamp(1.2rem,5vw,3rem);
 }
@@ -159,7 +155,6 @@ body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* Mobile-specific hero tweaks */
 @media(max-width:480px){
   .hero-content{margin-top:clamp(3rem,10vh,5rem);}
   .sun{bottom:16%;}
@@ -198,6 +193,20 @@ section{padding:6rem 2rem;max-width:720px;margin:0 auto}
 .btn-primary{background:linear-gradient(135deg,#c9a96e,#e8b86d);color:var(--deep);border:none}
 .btn-primary:hover{background:linear-gradient(135deg,#e8b86d,#f0c97d);box-shadow:0 0 30px #c9a96e44;transform:translateY(-1px)}
 .info-line{font-size:.82rem;color:var(--muted);letter-spacing:.2em;margin-top:3rem}
+.space-link{
+  margin-top:2rem;
+  font-size:.78rem;color:var(--muted);
+  letter-spacing:.1em;line-height:2.2;
+  opacity:.55;
+}
+.space-link a{
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid #c9a96e33;
+  padding-bottom:1px;
+  letter-spacing:.12em;
+  transition:opacity .3s;
+}
+.space-link a:hover{opacity:1;}
 footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 .footer-note{font-size:.75rem;color:var(--muted);margin-top:1rem;opacity:.6;letter-spacing:.2em}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
@@ -220,6 +229,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
   <a href="#hero" class="nav-logo">光㦓 létt</a>
   <div style="display:flex;align-items:center;gap:1.8rem">
     <a href="writing.html" class="nav-writing" style="color:var(--muted);text-decoration:none">文字空間</a>
+    <a href="space.html" class="nav-writing" style="color:var(--muted);text-decoration:none">你說，我在</a>
     <a href="#contact" class="nav-contact">預約</a>
   </div>
 </nav>
@@ -303,6 +313,11 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 <a href="https://www.instagram.com/be_ur_lett" target="_blank" class="btn btn-primary">IG 私訊預約</a>
 </div>
 <div class="info-line">台北　｜　平日 10:00–17:00　｜　私訊預約</div>
+<div class="space-link">
+  也提供線上一對一對話<br/>
+  讓心裡的話，有地方落下<br/>
+  <a href="space.html">你說，我在 ᵕ̈</a>
+</div>
 </section>
 
 <!-- ── Cards ── -->
@@ -330,11 +345,9 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
 </footer>
 
 <script>
-// ── 鎖右鍵與選取 ──
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('selectstart', e => e.preventDefault());
 
-// ── Reveal on scroll ──
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -346,12 +359,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(r => revealObserver.observe(r));
 
-// ── Nav: appear after scrolling past hero ──
 const nav = document.getElementById('mainNav');
 const hero = document.getElementById('hero');
 
 const navObserver = new IntersectionObserver((entries) => {
-  // When hero leaves viewport, show nav; when hero is visible, hide nav
   entries.forEach(e => {
     if (!e.isIntersecting) {
       nav.classList.add('visible');
