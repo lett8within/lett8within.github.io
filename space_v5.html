@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>你說，我在｜A Space to Breathe · 光㦓 létt</title>
+<meta name="description" content="一個屬於你的呼吸空間。透過一對一線上對話，陪你把心裡的話慢慢說出來、慢慢鬆開。"/>
+<meta name="google-site-verification" content="GPUDKDwSOciG8LBmOGcyQ4N9_TW-lSS9rIUjzrsTBRE"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3X3HNNPTQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3X3HNNPTQ5');
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--amber:#e8b86d;--deep:#1a1410;--soft:#f5ede0;--muted:#b8a48a;--white:#fdf8f2}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--soft);font-family:'Noto Serif TC',serif;font-weight:300;line-height:1.9;overflow-x:hidden;}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(17,11,7,.82);
+  border-bottom:1px solid #c9a96e18;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.05rem;color:var(--gold);letter-spacing:.25em;
+  text-decoration:none;opacity:.85;
+}
+.nav-links{display:flex;align-items:center;gap:1.8rem;}
+.nav-link{
+  font-size:.75rem;letter-spacing:.3em;color:var(--muted);
+  text-decoration:none;transition:color .3s;
+}
+.nav-link:hover{color:var(--soft);}
+.nav-contact{
+  font-size:.75rem;letter-spacing:.25em;color:var(--gold);
+  text-decoration:none;border:1px solid #c9a96e44;
+  padding:.35rem .9rem;transition:border-color .3s,color .3s;
+}
+.nav-contact:hover{border-color:#c9a96eaa;color:var(--amber);}
+@media(max-width:680px){
+  .nav{padding:.9rem 1.4rem;}
+  .nav-link{display:none;}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:0 2rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 60%,#1a2a3a33 0%,transparent 70%),
+    linear-gradient(180deg,#0d0a07 0%,#111518 50%,#0d0a07 100%);
+  z-index:0;
+}
+.hero-light{
+  position:absolute;top:-10%;left:50%;
+  transform:translateX(-50%);
+  width:60%;height:60%;
+  background:radial-gradient(ellipse,#c9a96e06 0%,transparent 70%);
+  z-index:1;
+}
+.hero-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+}
+.hero-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.78rem;letter-spacing:.5em;color:var(--gold);opacity:.6;
+  margin-bottom:2.5rem;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,8vw,5rem);
+  font-weight:300;color:var(--white);
+  letter-spacing:.08em;line-height:1.2;margin-bottom:.6rem;
+}
+.hero-title-en{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.4rem);
+  color:var(--gold);opacity:.65;letter-spacing:.18em;margin-bottom:2.5rem;
+}
+.hero-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin-bottom:2.5rem;
+}
+.hero-sub{
+  font-size:clamp(.88rem,1.8vw,1rem);
+  color:var(--muted);letter-spacing:.08em;line-height:2.2;
+}
+
+/* BODY */
+.body-section{
+  max-width:600px;margin:0 auto;
+  padding:7rem 2rem 4rem;
+}
+.body-text{
+  font-size:.95rem;color:var(--muted);
+  line-height:2.4;letter-spacing:.04em;
+}
+.body-text p{margin-bottom:1.6rem;}
+.body-text p:last-child{margin-bottom:0;}
+
+/* TAGLINE */
+.tagline-section{
+  max-width:600px;margin:0 auto;
+  padding:1rem 2rem 2rem;
+  text-align:center;
+}
+.tagline-rule{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,#c9a96e22,transparent);
+  margin-bottom:3rem;
+}
+.tagline-main{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:300;
+  color:var(--soft);letter-spacing:.15em;margin-bottom:.3rem;
+}
+.tagline-en{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1rem;color:var(--gold);opacity:.65;
+  letter-spacing:.15em;margin-bottom:.6rem;
+}
+.tagline-sub{
+  font-size:.82rem;color:var(--muted);
+  letter-spacing:.12em;opacity:.75;margin-bottom:2rem;
+}
+.tagline-meta{
+  font-size:.8rem;color:var(--muted);
+  letter-spacing:.18em;opacity:.65;margin-bottom:.5rem;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  max-width:600px;margin:0 auto;
+  padding:0 2rem 2rem;
+  text-align:center;
+}
+.disclaimer-rule{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,#c9a96e15,transparent);
+  margin-bottom:2rem;
+}
+.disclaimer-text{
+  font-size:.78rem;color:var(--muted);
+  letter-spacing:.08em;line-height:2;opacity:.55;
+}
+
+/* CONTACT */
+.contact-section{
+  text-align:center;
+  padding:3rem 2rem 7rem;
+}
+.contact-inner{max-width:500px;margin:0 auto;}
+.section-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:.78rem;letter-spacing:.4em;color:var(--gold);
+  margin-bottom:2rem;display:flex;align-items:center;gap:1rem;
+}
+.section-label::before,.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.section-label::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.btns{display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  padding:1rem 2.5rem;
+  font-family:'Noto Serif TC',serif;font-size:.9rem;
+  letter-spacing:.15em;text-decoration:none;
+  transition:all .3s;min-width:240px;justify-content:center;
+}
+.btn-primary{background:linear-gradient(135deg,#c9a96e,#e8b86d);color:var(--deep);border:none;}
+.btn-primary:hover{background:linear-gradient(135deg,#e8b86d,#f0c97d);box-shadow:0 0 30px #c9a96e44;transform:translateY(-1px)}
+.btn-outline{border:1px solid #c9a96e44;color:var(--muted);background:transparent;}
+.btn-outline:hover{border-color:#c9a96eaa;color:var(--soft);}
+
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #c9a96e12}
+.footer-note{font-size:.75rem;color:var(--muted);margin-top:1rem;opacity:.6;letter-spacing:.2em}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">光㦓 létt</a>
+  <div class="nav-links">
+    <a href="writing.html" class="nav-link">文字空間</a>
+    <a href="#contact" class="nav-contact">預約</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-light"></div>
+  <div class="hero-content">
+    <div class="hero-label">光㦓 létt</div>
+    <div class="hero-title">你說，我在</div>
+    <div class="hero-title-en">A Space to Breathe</div>
+    <div class="hero-divider"></div>
+    <div class="hero-sub">讓心裡的話，有地方落下</div>
+  </div>
+</div>
+
+<!-- BODY TEXT -->
+<div class="body-section reveal">
+  <div class="body-text">
+    <p>有時候，需要的不是答案。</p>
+    <p>而是一個地方，<br/>可以讓心裡那些還沒有被說出口的話，<br/>慢慢浮上來。</p>
+    <p>那些藏了很久的感受，<br/>那些說到一半又吞回去的句子，<br/>那些明明已經過去，<br/>卻還在身體裡留下重量的片段。</p>
+    <p>在一對一的對話裡，<br/>我會陪你慢慢說。</p>
+    <p>不急著整理，<br/>不急著變好，<br/>也不急著把一切變成某種道理。</p>
+    <p>我覺得，<br/>每一個人的生命都像一本書。</p>
+    <p>有些章節溫柔，<br/>有些章節沉默，<br/>有些地方折了角，<br/>有些頁面甚至連自己都不太敢翻開。</p>
+    <p>而當你願意把故事說出來，<br/>那些原本散落的片段，<br/>也許會在某個時刻，<br/>慢慢浮現出一條線。</p>
+    <p>你會開始看見，<br/>原來自己不是混亂的。</p>
+    <p>你只是走了很長一段路，<br/>而那些路，<br/>都曾經用它自己的方式，<br/>把你帶到現在這裡。</p>
+    <p>這是一個屬於你的呼吸空間。<br/>一切都可以從這個小小的入口開始。</p>
+  </div>
+</div>
+
+<!-- TAGLINE -->
+<div class="tagline-section reveal">
+  <div class="tagline-rule"></div>
+  <div class="tagline-main">你說，我在 ᵕ̈</div>
+  <div class="tagline-en">A Space to Breathe</div>
+  <div class="tagline-sub">讓心裡的話，有地方落下</div>
+  <div class="tagline-meta">一對一｜線上對話｜私訊預約 📩</div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer reveal">
+  <div class="disclaimer-rule"></div>
+  <div class="disclaimer-text">
+    「你說，我在」為一對一線上對話，<br/>
+    不包含催眠引導，亦非 QHHT session。
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section reveal" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">預約</div>
+    <div class="btns">
+      <a href="https://line.me/R/ti/p/@789irzch" target="_blank" class="btn btn-primary">LINE 私訊預約</a>
+      <a href="https://www.instagram.com/be_ur_lett" target="_blank" class="btn btn-outline">IG 私訊預約</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--gold);opacity:.6;text-decoration:none;letter-spacing:.25em;">光㦓 létt</a>
+  <div class="footer-note">A Space to Breathe　·　線上一對一對話</div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+</script>
+</body>
+</html>
